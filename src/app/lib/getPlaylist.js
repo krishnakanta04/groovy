@@ -1,6 +1,6 @@
 export default async function getPlaylist(playlistUrl) {
   try {
-    const response = await fetch("http://localhost:3000/api/getPlaylist", {
+    const response = await fetch(process.env.URL + "/api/getPlaylist", {
       method: "POST",
       body: JSON.stringify({ playlistUrl }),
       next: { revalidate: 3600 },
